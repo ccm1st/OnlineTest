@@ -1,10 +1,10 @@
 # OnlineTest
 
-Excercise 1 endpoint: 
+Exercise 1 endpoint: 
 http://onlinetestftw.azurewebsites.net/api
 
-Excercise 2 endpoint:
+Exercise 2 endpoint:
 http://onlinetestftw.azurewebsites.net/api/product
 
-Excercise 3 endpoint:
+Exercise 3 endpoint:
 http://onlinetestftw.azurewebsites.net/api/trolley
