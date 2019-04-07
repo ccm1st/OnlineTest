@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnlineTest.Implementation.Service
+namespace OnlineTest.Service.Implementation.Service
 {
     public class UserService : IUserService
     {
