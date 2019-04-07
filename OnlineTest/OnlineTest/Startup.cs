@@ -31,6 +31,7 @@ namespace OnlineTest
             services.AddMvc();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ITrolleyService, TrolleyService>();
             services.AddScoped<IProductAPI>(s =>
             {
                 return RestService.For<IProductAPI>(Configuration["ResourceEndpoint"]);
@@ -38,6 +39,10 @@ namespace OnlineTest
             services.AddScoped<IShopperHistoryAPI>(s =>
             {
                 return RestService.For<IShopperHistoryAPI>(Configuration["ResourceEndpoint"]);
+            });
+            services.AddScoped<ITrolleyAPI>(s =>
+            {
+                return RestService.For<ITrolleyAPI>(Configuration["ResourceEndpoint"]);
             });
         }
 
