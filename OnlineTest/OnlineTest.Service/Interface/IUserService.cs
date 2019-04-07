@@ -7,6 +7,6 @@ namespace OnlineTest.Service.Interface
 {
     public interface IUserService
     {
-        User GetUser();
+        User GetUser(string name);
     }
 }

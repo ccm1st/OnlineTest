@@ -8,11 +8,11 @@ namespace OnlineTest.Implementation.Service
 {
     public class UserService : IUserService
     {
-        public User GetUser()
+        public User GetUser(string name)
         {
             return new User
             {
-                Name = "test"
+                Name = name
             };
         }
     }
