@@ -68,13 +68,17 @@ namespace OnlineTest.Service.Implementation
             return result;
         }
 
+
+        /// <summary>
+        /// The implementation is based on the assumption that the popularity is defined as number of purchases has been made on the product. It doesn't take into account on the quantity as well as the customer.
+        /// </summary>
         private async Task<List<Product>> SortByPopularity(string token, List<Product> allProducts)
         {
             var shopperHistory = await _shopperHistoryAPI.GetShopperHistory(token);
 
             var purchasedProducts = shopperHistory.SelectMany(a => a.Products);
 
-            var popularProducts = allProducts.GroupJoin(purchasedProducts, product => product.Name, pp => pp.Name,
+            var popularProducts = allProducts.GroupJoin(purchasedProducts, product => product.Name, purchasedProduct => purchasedProduct.Name,
                 (product, matchedPurchase) =>
                 {
                     int count = matchedPurchase == null ? 0 : matchedPurchase.Count();

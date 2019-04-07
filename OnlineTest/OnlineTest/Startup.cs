@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using OnlineTest.Implementation.Service;
+using OnlineTest.Service.Implementation;
 using OnlineTest.Service.Interface;
 using Refit;
 
@@ -30,6 +30,7 @@ namespace OnlineTest
         {
             services.AddMvc();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductAPI>(s =>
             {
                 return RestService.For<IProductAPI>(Configuration["ResourceEndpoint"]);
