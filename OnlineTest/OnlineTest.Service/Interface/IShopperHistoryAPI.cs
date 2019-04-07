@@ -9,7 +9,7 @@ namespace OnlineTest.Service.Interface
 {
     public interface IShopperHistoryAPI
     {
-        [Get("products?token={token}")]
+        [Get("/api/resource/shopperHistory?token={token}")]
         Task<List<ShopperHistory>> GetShopperHistory(string token);
     }
 }

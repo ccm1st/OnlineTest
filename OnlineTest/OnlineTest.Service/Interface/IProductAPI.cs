@@ -9,7 +9,7 @@ namespace OnlineTest.Service.Interface
 {
     public interface IProductAPI
     {
-        [Get("/products?sortOption={sortOption}")]
+        [Get("/api/resource/products?token={token}")]
         Task<List<Product>> GetProducts(string token);
     }
 }

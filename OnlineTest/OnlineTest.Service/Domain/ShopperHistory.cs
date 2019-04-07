@@ -7,6 +7,6 @@ namespace OnlineTest.Service.Domain
     public class ShopperHistory
     {
         public int CustomerId { get; set; }
-        public List<Product> PurchasedProducts { get; set; }
+        public List<Product> Products { get; set; }
     }
 }
