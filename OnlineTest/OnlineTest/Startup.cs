@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OnlineTest.Implementation.Service;
 using OnlineTest.Service.Interface;
+using Refit;
 
 namespace OnlineTest
 {
@@ -29,6 +30,14 @@ namespace OnlineTest
         {
             services.AddMvc();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IProductAPI>(s =>
+            {
+                return RestService.For<IProductAPI>(Configuration["ResourceEndpoint"]);
+            });
+            services.AddScoped<IShopperHistoryAPI>(s =>
+            {
+                return RestService.For<IShopperHistoryAPI>(Configuration["ResourceEndpoint"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
